@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <context id="mybatis-generator" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.example.demo.repository.config.PlatformMapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <!--<property name="caseSensitive" value="true"/>-->
+        </plugin>
+
+        <!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+        <!-- 注释控制完毕 -->
+
+        <!-- 数据库地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.141.129:3306/test?autoReconnect=true"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 后台生成 -->
+        <!-- model -->
+        <javaModelGenerator targetPackage="com.example.demo.domain.entity"
+                            targetProject="../demo/demo-domain/src/main/java">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- Mapper映射 -->
+        <sqlMapGenerator targetPackage="mybatis"
+                         targetProject="../demo/demo-repository/src/main/resources">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+        <!-- Mapper接口 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.example.demo.repository.mapper"
+                             targetProject="../demo/demo-repository/src/main/java">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+        <!-- 表 -->
+        <!--<table tableName="qms_ose_user_card_relation" domainObjectName="QmsOseUserCardRelation" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+        <table schema="public" tableName="ts" domainObjectName="Ts"></table>
+    </context>
+</generatorConfiguration>

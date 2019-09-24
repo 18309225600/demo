@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modules>
+        <module>demo-common</module>
+        <module>demo-domain</module>
+        <module>demo-facade</module>
+        <module>demo-service</module>
+        <module>demo-repository</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+    </parent>
+
+    <properties>
+        <spring.boot.parent.version>2.1.4.RELEASE</spring.boot.parent.version>
+        <demo.modules.version>1.0.0-SNAPSHOT</demo.modules.version>
+        <lombok.version>1.18.8</lombok.version>
+        <mysql-connection.version>5.1.21</mysql-connection.version>
+        <druid.version>1.0.15</druid.version>
+        <feign.version>1.3.4.RELEASE</feign.version>
+        <mybatis.spring.version>1.2.0</mybatis.spring.version>
+        <mapper.spring.version>1.1.0</mapper.spring.version>
+        <starter.web.version>2.1.7.RELEASE</starter.web.version>
+        <pagehelper.version>4.1.0</pagehelper.version>
+        <persistapi.version>1.0</persistapi.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--modules-->
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-service</artifactId>
+                <version>${demo.modules.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-facade</artifactId>
+                <version>${demo.modules.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-repository</artifactId>
+                <version>${demo.modules.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-common</artifactId>
+                <version>${demo.modules.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>demo-domain</artifactId>
+                <version>${demo.modules.version}</version>
+            </dependency>
+
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--springboot-starter-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${starter.web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <optional>true</optional>
+                <version>2.1.7.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>${feign.version}</version>
+            </dependency>
+
+            <!--jdbc驱动和数据库连接池-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connection.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper.spring.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/tk.mybatis/mapper-weekend -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-weekend</artifactId>
+                <version>1.1.4.5</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>1.3.6</version>
+            </dependency>
+            <!-- 如果你只需要用到通用 Mapper 中的插件，可以只引入 mapper-generator -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-generator</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${persistapi.version}</version>
+            </dependency>
+
+            <!--分页-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+
+            <!--redis-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+</project>
