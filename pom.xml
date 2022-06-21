@@ -27,7 +27,7 @@
         <spring.boot.parent.version>2.1.4.RELEASE</spring.boot.parent.version>
         <demo.modules.version>1.0.0-SNAPSHOT</demo.modules.version>
         <lombok.version>1.18.8</lombok.version>
-        <mysql-connection.version>5.1.21</mysql-connection.version>
+        <mysql-connection.version>8.0.28</mysql-connection.version>
         <druid.version>1.0.15</druid.version>
         <feign.version>1.3.4.RELEASE</feign.version>
         <mybatis.spring.version>1.2.0</mybatis.spring.version>
