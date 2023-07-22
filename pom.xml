@@ -33,7 +33,7 @@
         <mybatis.spring.version>1.2.0</mybatis.spring.version>
         <mapper.spring.version>1.1.0</mapper.spring.version>
         <starter.web.version>2.1.7.RELEASE</starter.web.version>
-        <pagehelper.version>4.1.0</pagehelper.version>
+        <pagehelper.version>5.3.1</pagehelper.version>
         <persistapi.version>1.0</persistapi.version>
     </properties>
 
